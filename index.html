@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="lib/jquery.js"></script>
+
+    <script type="text/javascript" src="js/browser.js"></script>
+    <script type="text/javascript" src="js/svgtransformlist.js"></script>
+    <script type="text/javascript" src="js/math.js"></script>
+    <script type="text/javascript" src="js/units.js"></script>
+    <script type="text/javascript" src="js/svgutils.js"></script>
+    <script type="text/javascript" src="js/sanitize.js"></script>
+    <script type="text/javascript" src="js/history.js"></script>
+    <script type="text/javascript" src="js/select.js"></script>
+    <script type="text/javascript" src="js/draw.js"></script>
+    <script type="text/javascript" src="js/path.js"></script>
+    <script type="text/javascript" src="js/svgcanvas.js"></script>
+</head>
+
+<body>
+    <div><button id="Draw" onclick="clickRect()">画图</button></div>
+    <div id="workarea">
+        <div id="svgcanvas" style="position:relative">
+
+        </div>
+    </div>
+    <script>
+        var curConfig = {
+            canvas_expansion: 1,
+            dimensions: [580, 400],
+            initFill: { color: 'fff', opacity: 1 },
+            initStroke: { width: 1.5, color: '000', opacity: 1 },
+            initOpacity: 1,
+            initTool: 'select',
+            initFont: 'Helvetica, Arial, sans-serif'
+        };
+        var svgCanvas = new $.SvgCanvas(document.getElementById("svgcanvas"), curConfig);
+        function clickRect() {
+            svgCanvas.setMode('rect');
+        };
+    </script>
+</body>
+
+</html>
